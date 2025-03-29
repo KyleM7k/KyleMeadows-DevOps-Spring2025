@@ -1,0 +1,168 @@
+/* Concourse Syllabus CSS V5.1.0 */
+/* Copyright Intellidemia, Inc. 2007-24 */
+
+/*################################################################*/
+/*#                          Syllabus                            #*/
+/*################################################################*/
+
+/*##### Viewing #####*/
+
+/* General */
+.syl * {}
+
+/* "Page" Look */
+.syl {max-width:1140px; background:#ffffff; border:#999999 solid 1px; box-shadow:0px 0px 8px 2px #999999;}
+.syl-item-content {padding:0px 2rem; background:#ffffff; width:100%;}
+.syl-top, .syl-bottom {height:2rem; background:#ffffff;}
+
+/* Snippets */
+.snippet #syllabus .syl-top, .snippet #syllabus .syl-bottom {display:none;} /* Remove double styling and top and bottom when Syllabus item is selected */
+.snippet #syllabus.syl {border:transparent; box-shadow:none;} 
+
+/* Indentation */
+.syl-item-l2 .syl-item-content {padding-left:4rem;}
+.syl-item-l3 .syl-item-content {padding-left:6rem;}
+.syl .indent-one {padding-left:2rem;}
+.syl .indent-two {padding-left:4rem;}
+.syl .indent-three {padding-left:6rem;}
+.syl .indent-four {padding-left:8rem;}
+
+/* Font */
+/*.syl-item-content h1 {font-size:28px;}
+.syl-item-content h2 {font-size:24px;}
+.syl-item-content h3 {font-size:20px;}
+.syl-item-content h4 {font-size:16px;}
+.syl-item-content h5 {font-size:14px;}
+.syl-item-content h6 {font-size:12px;}
+.syl-item-content p {font-size:14px;}*/
+
+/* Links */
+.syl-item-content a[target="_blank"]:after {font-family:'Font Awesome 5 Free'; font-style:normal; font-weight:900; content:'\f35d'; padding-left:0.25rem; white-space:nowrap;}
+
+/* Rich Text Fields */
+.syl .rtf {margin-bottom:1rem;}
+.syl .rtf > :last-child {margin-bottom:0px;}
+.syl .rtf ul, .syl .rtf ol {padding-left:2rem; /*margin-left:0px;*/}
+.syl .rtf {overflow-wrap:break-word; word-wrap:break-word;}
+
+/* Rich Text Tables */
+.syl .rtf table {margin-bottom:1rem; border:1px solid #dee2e6;} /* To match Bootstrap table-sm table-striped */
+.syl .rtf table td, .syl .rtf table th {padding:0.6rem 0.3rem; border:1px solid #dee2e6; vertical-align:top;}
+.syl .rtf table thead td, .syl .rtf table thead th {font-weight: 400; vertical-align:bottom; border-bottom-width:2px;}
+.syl .rtf table tfoot td, .syl .rtf table tfoot th {font-weight:bold; border-top-width:2px;}
+.syl .rtf table {background-color:#ffffff;} /* Make sure extra-wide tables don't have transparent rows */
+.syl .rtf table > tbody > tr:nth-of-type(odd) {background-color:rgba(0,0,0,.05);}
+/* TODO: Implement if borderless tables are needed
+.syl .rtf table[border="0"], .syl .rtf table[border="0"] tr, .syl .rtf table[border="0"] th, .syl .rtf table[border="0"] td {border:none;}
+.syl .rtf table[border="0"] > tbody > tr {background-color:transparent;} */
+
+/* Rich Text Media */
+.syl .rtf img, .syl .rtf iframe, .syl .rtf object, .syl .rtf embed {max-width: 100%;}
+
+/* Native Tables */
+.syl .table td > :last-child {margin-bottom:0px;}
+.syl .table {background-color:#ffffff;} /* Make sure extra-wide tables don't have transparent rows */
+
+/* Inline Files */
+
+/* Syllabus Header */
+.syl-header small {white-space:nowrap;}
+.syl-header hr {height:2px; background-color:#0076D8;}
+
+/* Item Labels */
+.syl .category-header {margin-top:0.5rem;}
+.syl h2.category-label {} /* Level 1 */
+.syl hr.category-rule {height:1px; background-color:#0076D8;}
+.syl .category-icon {font-size:90%; color:#FFC107;}
+.syl h3.item-label {} /* Level 2 */
+.syl h4.item-label {} /* Level 3 */
+
+/* Syllabus Footer */
+.syl-footer {}
+
+/* PDF Embed */
+#embedded_syllabus_container {margin:-16px -15px -22px -15px;} /* Expand container to overcome default margins on content */
+#embedded_syllabus_container object {height:400px;} /* Set initial height */
+/* Remaning styling applied to object */
+
+/* No Syllabus */
+
+
+/*##### Editing #####*/
+
+/* Layout */
+.syl-edit {max-width:1380px; box-shadow:none; border:none; border-right:#999999 solid 1px; background:none;} /* Syl max-width + edit controls width */
+.syl-item-edit-controls {width:240px; min-width:240px; border-top:#ffffff 2px dotted; padding:0.5rem 0.5rem; text-align:right;}
+.syl-item-root .syl-item-edit-controls {border-top:none;}
+.syl-edit .syl-top, .syl-edit .syl-bottom {margin-left:240px; border-left:#999999 solid 1px;}
+.syl-edit .syl-top {border-top:#999999 solid 1px;}
+.syl-edit .syl-bottom {border-bottom:#999999 solid 1px;}
+.syl-edit .syl-item {display:flex; display:-ms-flexbox;} /* Additional flex definition needed to support IE */
+.syl-edit .syl-item-content {flex-grow:1; flex-shrink:1; flex-basis:auto; border-left:#999999 solid 1px; padding-top:0.5rem;}
+
+/* Item Hierarchy Grouping and Shading */
+.syl-item-edit-controls-offset-l1 {display:flex; display:-ms-flexbox; padding-left:1rem; flex-grow:1; flex-shrink:0; flex-basis:auto;}
+.syl-item-edit-controls-offset-l2 {display:flex; display:-ms-flexbox; padding-left:1rem; flex-grow:1; flex-shrink:0; flex-basis:auto;}
+.syl-edit .syl-item-l2 .syl-item-edit-controls {width:224px; min-width:224px;}
+.syl-edit .syl-item-l3 .syl-item-edit-controls {width:208px; min-width:208px;}
+.syl-edit .syl-item-l2 .syl-item-content {background:#f8f8f8;}
+.syl-edit .syl-item-l3 .syl-item-content {background:#f0f0f0;}
+.syl-edit .syl-item-content {border-top:2px dotted #bdbdbd;}
+.syl-edit .syl-item-root .syl-item-content {border-top:none;}
+
+/* Item Permissions */
+.syl-item-no-perm {visibility:hidden;}
+
+/* Edit Controls */
+.syl-edit .add-item {white-space:normal; margin-top:0.25rem; text-align:right;}
+
+/* Edit Item Forms */
+
+/* Tables */
+.syl-edit .ten-percent {width:10%;}
+.syl-edit .fifteen-percent {width:15%;}
+.syl-edit .twenty-percent {width:20%;}
+.syl-edit .twenty-five-percent {width:25%;}
+.syl-edit .thirty-percent {width:30%;}
+.syl-edit .forty-percent {width:40%;}
+.syl-edit .fifty-percent {width:50%;}
+.syl-edit .sixty-percent {width:60%;}
+.syl-edit  table.table > thead > tr, .syl-edit  table.table > tbody > tr {background-color:#ffffff;}
+.syl-edit .rtf table {background-color:#ffffff;}
+
+/* Comments */
+.syl-edit .comment {display:inline-block;}
+
+/* Did You Know Message */
+
+/* File Attachment Form */
+
+
+/*##### Mobile #####*/
+/* Overwrites for small screens */
+@media screen and (max-width:767px) {
+	/* Syllabus Page */
+	.syl {margin:0px -15px 15px -15px; border-left:none; border-right:none; box-shadow:none;}
+
+	/* Layout */
+	.syl-item-content {padding:0px 10px; background:#ffffff; width:100%;}
+	.syl-item-edit-controls {width:160px; min-width:160px; padding:10px 5px;}
+	.syl-edit .syl-top, .syl-edit .syl-bottom {margin-left:160px;}
+
+	/* Item Hierarchy Grouping and Shading */
+	.syl-item-edit-controls-offset-l1 {padding-left:10px;}
+	.syl-item-edit-controls-offset-l2 {padding-left:10px;}
+	.syl-edit .syl-item-l2 .syl-item-edit-controls {width:150px; min-width:150px;}
+	.syl-edit .syl-item-l3 .syl-item-edit-controls {width:140px; min-width:140px;}
+
+	/* Indentation */
+	.syl-item-l2 .syl-item-content {padding-left:20px;}
+	.syl-item-l3 .syl-item-content {padding-left:40px;}
+	.syl .indent-one {padding-left:10px;}
+	.syl .indent-two {padding-left:20px;}
+	.syl .indent-three {padding-left:30px;}
+	.syl .indent-four {padding-left:40px;}
+	
+	/* Rich Text Fields */
+	.syl .rtf ul, .syl .rtf ol {padding-left:10px; list-style-position:inside;}
+}
